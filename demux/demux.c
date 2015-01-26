@@ -512,7 +512,7 @@ static void execute_refresh(struct demux_internal *in)
 
     if (in->d_thread->desc->seek) {
         in->d_thread->desc->seek(in->d_thread, start_ts - 1.0, // arbitrary room
-                                 SEEK_ABSOLUTE | SEEK_BACKWARD);
+                                 SEEK_ABSOLUTE | SEEK_BACKWARD | SEEK_SUBPREROLL);
     }
 
     pthread_mutex_lock(&in->lock);
